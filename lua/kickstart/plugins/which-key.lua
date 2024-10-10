@@ -56,13 +56,27 @@ return {
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>b', group = '[b]uffer', icon = ' ', mode = { 'n', 'x' } },
+        { '<leader>c', group = '[c]ode', icon = ' ', mode = { 'n', 'x' } },
+        { '<leader>d', group = '[d]ebug', icon = ' ' },
+        { '<leader>D', group = '[D]ocument', icon = '󰈙 ' },
+        { '<leader>g', group = '[g]it', icon = ' ', mode = { 'n', 'v' } },
+        { '<leader>p', group = '[p]ackage manager', icon = ' ' },
+        { '<leader>q', group = 'diagonstic/quickfix', icon = '󱖫 ' },
+        { '<leader>r', group = '[r]efactor', icon = '󰁨 ', mode = { 'n', 'x' } },
+        { '<leader>s', group = '[s]earch', icon = ' ' },
+        { '<leader>t', group = '[t]oggle', icon = ' ' },
+        {
+          '<leader>w',
+          group = '[w]indows',
+          icon = ' ',
+          proxy = '<c-w>',
+          expand = function()
+            return require('which-key.extras').expand.win()
+          end,
+        },
+        { '<leader>W', group = '[W]orkspace', icon = ' ' },
+        { '<leader>x', group = 'trouble', icon = ' ' },
       },
     },
   },
