@@ -25,10 +25,16 @@ return {
       transparent_background = true,
       color_overrides = {
         mocha = {
-          -- Mantle = '#1e1e2e',
-          Mantle = '#ff0000',
+          -- base = '#101015',
         },
       },
+      custom_highlights = function(colors)
+        return {
+          Comment = { fg = colors.overlay0 },
+          Folded = { bg = colors.surface1 },
+          -- TabLineFill = { bg = colors.base },
+        }
+      end,
     },
   },
   {
