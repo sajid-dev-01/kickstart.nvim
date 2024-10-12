@@ -35,10 +35,24 @@ return {
           -- TabLineFill = { bg = colors.base },
         }
       end,
+      integrations = {
+        barbar = true,
+        dadbod_ui = true,
+        diffview = true,
+        dropbar = { enabled = true, color_mode = true },
+        fidget = true,
+        harpoon = true,
+        indent_blankline = { scope_color = 'sky', colored_indent_levels = true },
+        lsp_trouble = true,
+        mini = { indentscope_color = 'pink' },
+        noice = true,
+        which_key = true,
+      },
     },
   },
   {
     'rose-pine/neovim',
+    enabled = false,
     name = 'rose-pine',
     priority = 1000,
     init = function()
