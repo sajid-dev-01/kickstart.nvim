@@ -1,6 +1,7 @@
 return {
   'akinsho/toggleterm.nvim',
   lazy = true,
+  cmd = { 'ToggleTerm' },
   init = function()
     -- for which key desc
     vim.keymap.set({ 'n', 't' }, '<leader>tt', '', { desc = '[t]oggle [t]erminal' })

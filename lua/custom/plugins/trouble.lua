@@ -1,6 +1,6 @@
 return {
   'folke/trouble.nvim',
-  -- lazy = true,
+  lazy = true,
   opts = {
     focus = true,
   },
