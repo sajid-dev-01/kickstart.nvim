@@ -188,7 +188,19 @@ return {
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
-        --
+        tailwindcss = {
+          root_dir = function(fname)
+            local root_pattern = require('lspconfig').util.root_pattern(
+              'tailwind.config.js',
+              'tailwind.config.ts',
+              'tailwind.config.mjs',
+              'postcss.config.mjs',
+              'postcss.config.ts'
+            )
+
+            return root_pattern(fname)
+          end,
+        },
 
         lua_ls = {
           -- cmd = { ... },
