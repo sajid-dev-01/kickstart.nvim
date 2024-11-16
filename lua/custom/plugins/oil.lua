@@ -1,15 +1,12 @@
 return {
   'stevearc/oil.nvim',
-  lazy = true,
   -- Optional dependencies
   dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if prefer nvim-web-devicons
   keys = {
     -- stylua: ignore
     { '-', function() require('oil').toggle_float('') end, desc = 'Open Oil in parent dir', },
+    { '<leader>-', function () require('oil').toggle_float() end, desc = 'Open oil in current dir'}
   },
-  init = function()
-    vim.keymap.set('n', '<leader>-', require('oil').toggle_float, { desc = 'Open Oil in a float' })
-  end,
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {

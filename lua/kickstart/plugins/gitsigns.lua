@@ -6,6 +6,7 @@
 return {
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    event = 'BufReadPre',
     opts = {
       signs = {
         add = { text = '+' },
@@ -62,8 +63,9 @@ return {
           gitsigns.diffthis '@'
         end, { desc = 'git [D]iff against last commit' })
         -- Toggles
-        map('n', '<leader>gB', gitsigns.toggle_current_line_blame, { desc = 'Toggle [G]it [B]lame' })
-        map('n', '<leader>gD', gitsigns.toggle_deleted, { desc = 'Toggle [G]it [D]eleted' })
+        map('n', '<leader>tg', '', { desc = '[t]oggle [g]it' })
+        map('n', '<leader>tgb', gitsigns.toggle_current_line_blame, { desc = '[t]oggle [g]it [b]lame' })
+        map('n', '<leader>tgd', gitsigns.toggle_deleted, { desc = '[t]oggle [g]it [d]eleted' })
       end,
     },
   },

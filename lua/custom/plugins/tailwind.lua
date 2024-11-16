@@ -1,7 +1,7 @@
 return {
   {
     'NvChad/nvim-colorizer.lua',
-    event = 'VeryLazy',
+    event = 'BufReadPost',
     opts = {
       user_default_options = {
         tailwind = true,
