@@ -1,9 +1,5 @@
 return {
   'folke/trouble.nvim',
-  lazy = true,
-  opts = {
-    focus = true,
-  },
   cmd = { 'Trouble', 'TroubleToggle' },
   keys = {
     { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
@@ -13,7 +9,9 @@ return {
     { '<leader>xs', '<cmd>Trouble symbols toggle focus=false<cr>', desc = 'Symbols (Trouble)' },
     { '<leader>xl', '<cmd>Trouble lsp toggle focus=false win.position=right<cr>', desc = 'LSP Definitions / ... (Trouble)' },
   },
-  init = function()
+  config = function()
+    require('trouble').setup({ focus = true })
+
     local actions = require 'telescope.actions'
     local open_with_trouble = require('trouble.sources.telescope').open
 

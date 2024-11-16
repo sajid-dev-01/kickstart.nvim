@@ -1,7 +1,7 @@
 return {
   'kevinhwang91/nvim-ufo',
   dependencies = { 'kevinhwang91/promise-async' },
-  event = 'VeryLazy',
+  event = 'BufReadPre',
   init = function()
     vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
     vim.o.foldcolumn = '1' -- '0' is not bad
@@ -16,7 +16,11 @@ return {
         return { 'treesitter', 'indent' }
       end,
       open_fold_hl_timeout = 400,
-      close_fold_kinds = { 'imports', 'comment' },
+      close_fold_kinds_for_ft = {
+        default = { 'imports', 'comment' },
+        -- json = { 'array' },
+        c = { 'comment', 'region' },
+      },
       preview = {
         win_config = {
           border = { '', '─', '', '', '', '─', '', '' },
@@ -64,7 +68,7 @@ return {
     vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
     vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
     vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
-    vim.keymap.set('n', '<C-k>', function()
+    vim.keymap.set('n', 'zk', function()
       local winid = require('ufo').peekFoldedLinesUnderCursor()
       if not winid then
         -- vim.lsp.buf.hover()

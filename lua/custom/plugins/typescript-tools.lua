@@ -1,9 +1,11 @@
 return {
   'pmizio/typescript-tools.nvim',
+  ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
   dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
   opts = {
     settings = {
-      tsserver_max_memory = 'auto',
+      tsserver_max_memory = '1024', -- 1024 MB
+      separate_diagnostic_server = false,
       expose_as_code_action = 'all',
       jsx_close_tag = {
         enable = true,
@@ -29,14 +31,19 @@ return {
       },
     },
   },
-  init = function()
+  config = function (_, opts)
+    require('typescript-tools').setup(opts)
+
     local map = function(mode, keys, func, desc)
       vim.keymap.set(mode, keys, func, { desc = 'LSP: ' .. desc })
     end
 
-    map('n', '<leader>cf', '<cmd>TSToolsFixAll <cr>', '[f]ix all')
-    map('n', '<leader>cR', '<cmd>TSToolsRemoveUnused <cr>', '[R]emove unused')
-    map('n', '<leader>rF', '<cmd>TSToolsRenameFile <cr>', '[F]ile rename')
+    map('n', '<leader>cF', '<cmd>TSToolsFixAll <cr>', '[F]ix all')
+
+    -- refactor keymaps
+    map('n', '<leader>cr', '', '[c]ode [r]efactor')
+    map('n', '<leader>cru', '<cmd>TSToolsRemoveUnused <cr>', 'remove [u]nused')
+    map('n', '<leader>crf', '<cmd>TSToolsRenameFile <cr>', 'rename [f]ile')
 
     -- import keymaps
     map('n', '<leader>ci', '', '[c]ode [i]mport')
