@@ -2,6 +2,7 @@
 return {
   {
     'folke/todo-comments.nvim',
+    event = 'VimEnter',
     cmd = { 'TodoTrouble', 'TodoTelescope' },
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
