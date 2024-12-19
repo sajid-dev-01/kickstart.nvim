@@ -60,6 +60,7 @@ return {
         { '<leader>c', group = '[c]ode', icon = ' ', mode = { 'n', 'x' } },
         { '<leader>d', group = '[d]ebug', icon = ' ' },
         { '<leader>D', group = '[D]ocument', icon = '󰈙 ' },
+        { '<leader>f', group = '[f]ind', icon = ' ' },
         { '<leader>g', group = '[g]it', icon = ' ', mode = { 'n', 'v' } },
         { '<leader>p', group = '[p]ackage manager', icon = ' ' },
         { '<leader>q', group = 'diagonstic/quickfix', icon = '󱖫 ' },
