@@ -57,8 +57,8 @@ return {
         actions = {
           ['ctrl-h'] = { actions.toggle_hidden },
         },
-        grep_opts = '--exclude-dir node_modules --binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e',
-        rg_opts = '-g "!node_modules" --hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e',
+        grep_opts = '--exclude-dir .git --exclude-dir node_modules --binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e',
+        rg_opts = '-g "!.git" -g "!node_modules" --hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e',
       },
     }
   end,
