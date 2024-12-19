@@ -72,6 +72,7 @@ return {
     -- { '<leader>fgs', '<cmd>FzfLua git_status<CR>',                              desc = 'Status' },
     -- search
     { '<leader>fa', '<cmd>FzfLua autocmds<cr>',                                 desc = '[f]ind [a]uto Commands' },
+    { '<leader>fb', '<cmd>FzfLua buffers<cr>',                                  desc = '[f]ind [b]uffers' },
     { '<leader>fc', '<cmd>FzfLua commands<cr>',                                 desc = '[f]ind [c]ommands' },
     { '<leader>fd', '<cmd>FzfLua diagnostics_document<cr>',                     desc = '[f]ind document [d]iagnostics' },
     { '<leader>fD', '<cmd>FzfLua diagnostics_workspace<cr>',                    desc = '[f]ind workspace [D]iagnostics' },
