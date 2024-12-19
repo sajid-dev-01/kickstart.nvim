@@ -16,6 +16,8 @@ return {
       { "<leader>xT", "<cmd>Trouble todo toggle<cr>",                                   desc = "Todo (Trouble)" },
       { "<leader>st", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>",                 desc = "[S]earch Todo/Fix/Fixme" },
       { "<leader>sT", "<cmd>TodoTelescope<cr>",                                         desc = "[S]earch all [T]odo" },
+      { "<leader>ft", "<cmd>TodoFzfLua keywords=TODO,FIX,FIXME<cr>",                    desc = "[f]ind Todo/Fix/Fixme" },
+      { "<leader>fT", "<cmd>TodoFzfLua<cr>",                                            desc = "[f]ind all [T]odo" },
     },
   },
 }
