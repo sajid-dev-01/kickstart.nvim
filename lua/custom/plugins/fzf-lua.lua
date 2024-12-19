@@ -48,11 +48,17 @@ return {
         actions = {
           ['ctrl-h'] = { actions.toggle_hidden },
         },
+        -- cmd = "find . -type f -printf '%P\n'",
+        find_opts = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
+        rg_opts = [[--color=never --files --hidden --no-ignore --follow -g "!.git" -g "!node_modules"]],
+        fd_opts = [[--color=never --type f --hidden --no-ignore --follow --exclude .git --exclude node_modules]],
       },
       grep = {
         actions = {
           ['ctrl-h'] = { actions.toggle_hidden },
         },
+        grep_opts = '--exclude-dir node_modules --binary-files=without-match --line-number --recursive --color=auto --perl-regexp -e',
+        rg_opts = '-g "!node_modules" --hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e',
       },
     }
   end,
